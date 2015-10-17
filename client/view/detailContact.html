@@ -1,0 +1,42 @@
+<template name="detailContact">
+  {{#ionView}}
+    {{#ionContent}}
+        <div class=" bar bar-header bar-positive">
+            <h1 class="title"> "Name of contact/firstName" </h1>
+            <button id="backToContactList" class="button button-clear icon ion-chevron-right"></button>
+        </div>
+    {{/ionContent}}
+
+    {{#ionContent}}
+    <br>
+    <br>
+      <div class="list card">
+        <div class="item item-avatar">
+          <h2>Full name </h2>
+          <p> Date of birth </p>
+        </div>
+
+      <div class="item item-body">
+        <p> Gender</p>
+        <p> Phone number </p>
+        <p> Email </p>
+      </div>
+
+    </div> <!-- end of list card -->
+    {{/ionContent}}
+
+    {{#ionContent}}
+    <div class="tabs tabs-icon-only">
+      <a href="#" class="tab-item">
+        <i class="icon ion-ios-trash"></i>
+      </a>
+      <a href="#" class="tab-item">
+        <i class="icon ion-edit"></i>
+      </a>
+    </div>
+    {{/ionContent}}
+
+
+
+  {{/ionView}}
+</template>
