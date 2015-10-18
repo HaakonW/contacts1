@@ -7,7 +7,7 @@
         </div>
     {{/ionContent}}
 
-    {{#ionContent}}
+    {{#ionContent class="has-footer"}}
     <br>
     <br>
       <div class="list card">
@@ -17,9 +17,13 @@
         </div>
 
       <div class="item item-body">
-        <p> Gender:{{gender}}</p>
         <p> Email: {{email}} </p>
-        <!-- google-map -->
+        <p> Gender: {{gender}}</p>
+        <p>Latitude: {{lat}} </p>
+        <p>Longitude: {{long}} </p>
+        <div class="map-container">
+          {{>googleMap name="map" options=mapOptions}}
+        </div>
       </div>
 
     </div> <!-- end of list card -->
