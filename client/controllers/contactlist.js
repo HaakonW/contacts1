@@ -16,7 +16,7 @@ Router.route('newContact');
 
   Template.contactlist.helpers({
     contacts:function(){
-      return contacts.find();
+      return contacts.find({},{sort:{firstname:1}});
     }
   });
 
