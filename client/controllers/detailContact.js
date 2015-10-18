@@ -1,3 +1,8 @@
+Meteor.startup(function(){
+  GoogleMaps.load();
+});
+
+
 Template.detailContact.helpers({
   firstName:function(){
     return Session.get("firstName");
@@ -22,7 +27,27 @@ Template.detailContact.helpers({
   },
   id:function(){
     return Session.get("id");
+  },
+
+  mapOptions:function(){
+
+    if(GoogleMaps.loaded())
+    {
+      return{
+        center:new google.maps.LatLng(Session.get("latitude"),Session.get("longitude")),
+        zoom:12
+      };
+    }
   }
+});
+
+Template.detailContact.onCreated(function(){
+  GoogleMaps.ready("map",function(map){
+    var marker = new google.maps.Marker({
+      position: map.options.center,
+      map:map.instance,
+    });
+  });
 });
 
 Template.detailContact.events({
@@ -31,8 +56,11 @@ Template.detailContact.events({
   },
 
   'click #deleteButton':function(event,template){
-    console.log(Session.get("phoneNumber"));
     contacts.remove({_id:Session.get("id")});
     Router.go('/');
+  },
+
+  'click #editButton':function(event,template){
+    Router.go('/updateContact');
   }
 });

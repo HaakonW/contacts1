@@ -10,6 +10,7 @@ Router.route("/", function(){
 Router.route('test'); //added route to 'test'. Have to add route for every template I guess
 Router.route('detailContact');
 Router.route('newContact');
+Router.route('updateContact');
 
 
 
@@ -44,13 +45,12 @@ function getInfoContact(id){
   var obj = contacts.find({_id:id}).fetch();
   console.log(obj);
   Session.set("firstName",obj[0].firstname);
-  console.log(Session.get("firstName"));
   Session.set("lastName",obj[0].lastname);
-  console.log(Session.get("lastName"));
-  Session.set("phoneNr",obj[0].number);
-  console.log(Session.get("phoneNr"));
+  Session.set("phoneNumber",obj[0].number);
+  Session.set("email", obj[0].email);
   Session.set("gender",obj[0].gender);
-  console.log(Session.get("gender"));
+  Session.set("latitude", obj[0].latitude);
+  Session.set("longitude",obj[0].longitude);
   Session.set("id",obj[0]._id);
   //set name, etc in detailContact with session variables
 
