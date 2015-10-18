@@ -8,54 +8,28 @@
 
   {{#ionContent class="has-header"}}
 
-<div class="list">
-
-  <label class="item item-input">
-    <input type="text" placeholder="First name" id="firstName">
-  </label>
-
-  <label class="item item-input">
-    <input type="text" placeholder="Last name" id="lastName">
-  </label>
-
-  <label class="item item-input">
-    <input type="text" placeholder="Phone number" id="phoneNumber">
-  </label>
-
-  <label class="item item-input">
-    <input type="text" placeholder="Email" id="email">
-  </label>
-
+  <div class="list">
+    <label class="item item-input">
+      <input type="text" placeholder="First name" id="firstName">
+    </label>
+    <label class="item item-input">
+      <input type="text" placeholder="Last name" id="lastName">
+    </label>
+    <label class="item item-input">
+      <input type="text" placeholder="Phone number" id="phoneNumber">
+    </label>
+    <label class="item item-input">
+      <input type="text" placeholder="Email" id="email">
+    </label>
     <label class="item item-input">
       <input type="text" placeholder="Gender" id="gender">
     </label>
-
-  <label class="item item-input">
-    <input type="text" placeholder="Location: Latitude, Longitude" id="location">
-    <button id="getLocation" class=" button button-small button-royal">Get Location</button>
-  </label>
-  <div class="button-bar">
-    <button id="backBTN" class="margin button button-assertive">Go back to contacts</button>
-    <button id="addBTN" name="addBTN" class="margin button button-balanced">Add new Contact</button>
-  </div>
-
-</div> <!--END LIST DIV-->
-<div class="map-container">
-  <h5>hei</h5>
-            {{>googleMap name="exampleMap" options=exampleMapOptions}}
-          </div>
-
-
-
+  </div> <!--END LIST DIV-->
   {{/ionContent}}
   <div class="bar bar-footer bar-positive">
-
-    <button class="button button-clear button">Cancel
-    </button>
-    <h1 class="title">Footer</h1>
-    <button class="button button-clear button">Add contact
-    </button>
+    <button id="cancelBTN" class="button button-icon icon ion-close"></button>
+    <!-- <h1 class="title">Footer</h1> -->
+    <button id="addBTN" class="button button-icon ion-person-add">  Create contact </button>
   </div>
   {{/ionView}}
-
 </template>
