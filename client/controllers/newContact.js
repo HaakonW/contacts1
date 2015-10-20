@@ -34,10 +34,7 @@ Template.newContact.events({
 
 
 "click #cancelBTN": function(){
-  var back = confirm("Go back to contacts?");
-  if (back) {
-    Router.go("/");
-  }
+  Router.go('/');
 },
 });
 

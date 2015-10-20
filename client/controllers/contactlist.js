@@ -34,6 +34,7 @@ Router.route('search');
 
   Template.contactlist.events({
     'click #addContact':function(event,template){
+      findUser();
       Router.go('/newContact');
     },
 
@@ -66,7 +67,7 @@ Router.route('search');
 
 
 
-function getInfoContact(id){
+var getInfoContact =function(id){
   //console.log(id);
   var obj = contacts.find({_id:id}).fetch();
   console.log(obj);
@@ -81,4 +82,4 @@ function getInfoContact(id){
   //set name, etc in detailContact with session variables
 
   Router.go('/detailContact');
-}
+};

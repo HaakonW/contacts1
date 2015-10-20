@@ -1,7 +1,6 @@
 <template name="newContact">
   {{#ionView}}
   <div class="bar bar-header bar-positive">
-    <button class="button button-icon icon ion-arrow-left-c"></button>
     <h1 class="title">Add a new contact</h1>
     <!-- <button class="button button-icon icon ion-checkmark"></button> -->
   </div>
@@ -30,19 +29,19 @@
       <input type="text" id="gender">
     </label>
     <label class="item item-input">
-      <span class="spanField" id="latitude">Latitude: </span>
-      <input type="text" value="{{lat}}" id="latitude"  >
+      <span class="spanField">Latitude: </span>
+      <input type="text" value="{{lat}}" id="latitude">
     </label>
     <label class="item item-input">
       <span class="spanField">Longitude: </span>
-      <input  type="text" value="{{long}}" id="longitude" >
+      <input  type="text" value="{{long}}" id="longitude">
     </label>
   </div> <!--END LIST DIV-->
   {{/ionContent}}
   <div class="bar bar-footer bar-positive">
-    <button id="cancelBTN" class="button button-icon icon ion-close"></button>
+    <button id="cancelBTN" class="button button-icon icon ion-close"> Cancel</button>
     <!-- <h1 class="title">Footer</h1> -->
-    <button id="addBTN" class="button button-icon ion-person-add">  Create contact </button>
+    <button id="addBTN" class="button button-icon icon-right ion-person-add">  Create </button>
   </div>
   {{/ionView}}
 </template>
