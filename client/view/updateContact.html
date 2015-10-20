@@ -1,0 +1,51 @@
+<template name="updateContact">
+  {{#ionView}}
+  {{#ionContent}}
+  <div class=" bar bar-header bar-positive">
+    <h1 class="title"> Edit: {{firstName}} {{lastName}} </h1>
+  </div>
+  {{/ionContent}}
+  {{#ionContent class="has-footer has-header"}}
+  <div class="list">
+    <label class="item item-input">
+      <span class="editSpan">Firstname: </span>
+      <input id="firstName" type="text" value="{{firstName}}">
+    </label>
+    <label class="item item-input">
+      <span class="editSpan">Lastname: </span>
+      <input id="lastName" type="text" value="{{lastName}}">
+    </label>
+    <label class="item item-input">
+      <span class="editSpan">Phonenumber: </span>
+      <input id="phoneNumber" type="text" value="{{phoneNumber}}">
+    </label>
+    <label class="item item-input">
+      <span class="editSpan">Gender: </span>
+      <input id="gender" type="text" value="{{gender}}">
+    </label>
+    <label class="item item-input">
+      <span class="editSpan">Email: </span>
+      <input id="email" type="text" value="{{email}}">
+    </label>
+    <label class="item item-input">
+      <span class="editSpan">Latitude: </span>
+      <input id="latitude" type="text" value="{{lat}}" >
+    </label>
+    <label class="item item-input">
+      <span class="editSpan">Altitude: </span>
+      <input id="longitude" type="text" value="{{long}}" >
+    </label>
+  </div>
+  {{/ionContent}}
+  {{#ionContent}}
+  <div class="bar bar-footer bar-positive">
+    <button id="backtoContacts" class="button button-clear button icon ion-arrow-left-c">
+      Go back
+    </button>
+    <button id="editContact" class="button button-clear button icon icon-right ion-loop">
+      Update contact
+    </button>
+  </div>
+  {{/ionContent}}
+  {{/ionView}}
+</template>
