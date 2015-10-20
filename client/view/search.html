@@ -1,0 +1,24 @@
+<template name="search">
+  {{#ionView}}
+      <div class="bar bar-header bar-positive">
+        <button id="backArrow" class="button button-icon icon ion-arrow-left-c"></button>
+        <h1 class="title">Search for contact</h1>
+      </div>
+
+      {{#ionContent class="has-header"}}
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input id="searchField" type="search" placeholder="Search">
+        </label>
+        <button class="button button-positive">Search</button>
+      {{/ionContent}}
+
+      {{#ionContent class="has-footer"}}
+      {{/ionContent}}
+
+      <div class="bar bar-footer bar-positive">
+        <h2 class="title">((Maybe show count result))</h2>
+        <button id="searchB" class="button button-energized">Search</button>
+      </div>
+  {{/ionView}}
+</template>
