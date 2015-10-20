@@ -1,10 +1,11 @@
-navigator.geolocation.getCurrentPosition(GetLocation);
-function GetLocation(location) {
-    Session.set("latitude", location.coords.latitude);
-    Session.set("longitude", location.coords.longitude);
-}
 
-
+findUser = function(){
+  navigator.geolocation.getCurrentPosition(GetLocation);
+  function GetLocation(location) {
+      Session.set("latitude", location.coords.latitude);
+      Session.set("longitude", location.coords.longitude);
+  }
+};
 
 Template.newContact.events({
   "click #addBTN": function(){
@@ -14,20 +15,23 @@ Template.newContact.events({
     Session.set("phoneNumber", document.getElementById("phoneNumber").value);
     Session.set("email", document.getElementById("email").value);
     Session.set("gender", document.getElementById("gender").value);
+    Session.set("latitude", document.getElementById("latitude").value);
+    Session.set("longitude", document.getElementById("longitude").value);
 
-    // var createNewContact = "Is this correct:?\n" +
-    // "First name: "+Session.get("firstName") +
-    // "\nLast name: "+Session.get("lastName") +
-    // "\nPhone number: "+ Session.get("phoneNumber")+
-    // "\nEmail: "+Session.get("email") +
-    // "\nGender: "+Session.get("gender") +
-    // "\nLatitude: "+Session.get("latitude")+
-    // "\nLongitude: "+Session.get("longitude");
-
-      contacts.insert({firstname: Session.get("firstName"), lastname: Session.get("lastName"), number: Session.get("phoneNumber"),
-                        email: Session.get("email"), gender: Session.get("gender"), longitude: Session.get("longitude"),latitude:Session.get("latitude")});
+      contacts.insert({firstname: Session.get("firstName"),
+                        lastname: Session.get("lastName"),
+                        number: Session.get("phoneNumber"),
+                        email: Session.get("email"),
+                        gender: Session.get("gender"),
+                        longitude: Session.get("longitude"),
+                        latitude:Session.get("latitude")});
       Router.go("/detailContact");
 }, //END ADDBTN
+
+"click #latitude": function(){
+    document.getElementById("#latitude").value = Session.get("latitude");
+},
+
 
 "click #cancelBTN": function(){
   var back = confirm("Go back to contacts?");
@@ -35,4 +39,9 @@ Template.newContact.events({
     Router.go("/");
   }
 },
+});
+
+Template.newContact.helpers({
+  lat:function(){ return Session.get("latitude"); },
+  long:function(){ return Session.get("longitude"); }
 });
