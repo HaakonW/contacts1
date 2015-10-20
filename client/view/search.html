@@ -10,15 +10,26 @@
           <i class="icon ion-search placeholder-icon"></i>
           <input id="searchField" type="search" placeholder="Search">
         </label>
-        <button class="button button-positive">Search</button>
+        {{#each result}}
+          {{#ionItem}}
+              <h2>{{firstname}} {{lastname}}</h2>
+              <!-- <button id="viewContact" class="button button-clear icon ion-ios-telephone"></button> -->
+              <p>Phonenumber: {{number}}</p>
+              <p>Email: {{email}} </p>
+              <p>Longitude: {{longitude}} </p>
+              <p>Latitude: {{latitude}} </p>
+          {{/ionItem}}
+        {{/each}}
       {{/ionContent}}
+
+
 
       {{#ionContent class="has-footer"}}
       {{/ionContent}}
 
       <div class="bar bar-footer bar-positive">
-        <h2 class="title">((Maybe show count result))</h2>
-        <button id="searchB" class="button button-energized">Search</button>
+        <h1 class="title"></h1>
+        <button id="searchB" class="button button-clear button-right icon ion-ios-search-strong">Search</button>
       </div>
   {{/ionView}}
 </template>

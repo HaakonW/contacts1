@@ -1,11 +1,16 @@
+searchResults = [];
+Session.set("searchRes", searchResults);
+
+
 Template.search.helpers({
   result:function(){
-    return searchResults;
+    return Session.get("searchRes");
   }
 });
 
 Template.search.events({
   'click #backArrow':function(){
+    Session.set("searchRes","");
     Router.go('/');
   },
 
@@ -17,10 +22,10 @@ Template.search.events({
 
 
 function findContact(searchTerm){
-  var searchResults = [];
+  searchResults = [];
 
   var list = contacts.find().fetch();
-  //console.log(list);
+  console.log(list);
   for(var i=0; i < list.length; i++)
   {
     obj = list[i];
@@ -28,7 +33,9 @@ function findContact(searchTerm){
     {
       console.log("Objects firstname: " + obj.firstname);
       console.log("objects lastname: " + obj.lastname);
-      searchResults.push(obj.firstname);
+      searchResults.push(obj);
     }
   }
+  console.log(searchResults);
+  Session.set("searchRes",searchResults);
 }
