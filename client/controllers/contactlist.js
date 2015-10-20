@@ -11,6 +11,7 @@ Router.route('test'); //added route to 'test'. Have to add route for every templ
 Router.route('detailContact');
 Router.route('newContact');
 Router.route('updateContact');
+Router.route('search');
 
 
 
@@ -18,8 +19,17 @@ Router.route('updateContact');
   Template.contactlist.helpers({
     contacts:function(){
       return contacts.find({},{sort:{firstname:1}});
-    }
-  });
+    },
+    contactsLastName:function(){
+      return contacts.find({},{sort:{lastname:1}});
+    },
+    firstnameCheck:function(){
+      return Session.get("firstnameC");
+    },
+    lastnameCheck:function(){
+      return Session.get("lastnameC");
+    },
+    });
 
 
   Template.contactlist.events({
@@ -30,12 +40,28 @@ Router.route('updateContact');
     'click #viewContact':function(event,template){
       /*Need function which find this contacts data and then route it to
       detailContact. Do Router.go() have to be inside this function?? */
-
-
       getInfoContact(this._id);
       //console.log(contacts.find({_id:id}).fetch());
-
     },
+
+    'click #sortButton':function(event,template){
+      console.log("sort clicked");
+      if(Session.get("firstnameC"))
+      {
+        Session.set("firstnameC", false);
+        Session.set("lastnameC", true);
+      }
+      else
+      {
+        Session.set("firstnameC",true);
+        Session.set("lastnameC", false);
+
+      }
+    },
+
+    'click #searchButton':function(){
+      Router.go('/search');
+    }
 });
 
 

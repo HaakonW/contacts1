@@ -26,6 +26,8 @@ Template.updateContact.events({
                   gender: Session.get("gender"),
                   longitude: Session.get("longitude"),
                   latitude: Session.get("latitude")});
+  
+
   Router.go('/');
 },
   'click #backtoContacts':function(event,template){

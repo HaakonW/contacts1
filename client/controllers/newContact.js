@@ -25,10 +25,10 @@ Template.newContact.events({
     // "\nLongitude: "+Session.get("longitude");
 
       contacts.insert({firstname: Session.get("firstName"), lastname: Session.get("lastName"), number: Session.get("phoneNumber"),
-                        email: Session.get("email"), gender: Session.get("gender"), location: Session.get("location")});
-
-Router.go("/contact");
+                        email: Session.get("email"), gender: Session.get("gender"), longitude: Session.get("longitude"),latitude:Session.get("latitude")});
+      Router.go("/detailContact");
 }, //END ADDBTN
+
 "click #cancelBTN": function(){
   var back = confirm("Go back to contacts?");
   if (back) {
