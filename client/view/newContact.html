@@ -10,19 +10,32 @@
 
   <div class="list">
     <label class="item item-input">
-      <input type="text" placeholder="First name" id="firstName">
+      <span class="spanField">Firstname:</span>
+      <input type="text" id="firstName">
     </label>
     <label class="item item-input">
-      <input type="text" placeholder="Last name" id="lastName">
+      <span class="spanField">Last name:</span>
+      <input type="text" id="lastName">
     </label>
     <label class="item item-input">
-      <input type="text" placeholder="Phone number" id="phoneNumber">
+      <span class="spanField">Phone number:</span>
+      <input type="text" id="phoneNumber">
     </label>
     <label class="item item-input">
-      <input type="text" placeholder="Email" id="email">
+      <span class="spanField">Email:</span>
+      <input type="text" id="email">
     </label>
     <label class="item item-input">
-      <input type="text" placeholder="Gender" id="gender">
+      <span class="spanField">Gender:</span>
+      <input type="text" id="gender">
+    </label>
+    <label class="item item-input">
+      <span class="spanField" id="latitude">Latitude: </span>
+      <input type="text" value="{{lat}}" id="latitude"  >
+    </label>
+    <label class="item item-input">
+      <span class="spanField">Longitude: </span>
+      <input  type="text" value="{{long}}" id="longitude" >
     </label>
   </div> <!--END LIST DIV-->
   {{/ionContent}}
