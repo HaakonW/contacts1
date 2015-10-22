@@ -39,14 +39,10 @@ Router.route('search');
     },
 
     'click #viewContact':function(event,template){
-      /*Need function which find this contacts data and then route it to
-      detailContact. Do Router.go() have to be inside this function?? */
       getInfoContact(this._id);
-      //console.log(contacts.find({_id:id}).fetch());
     },
 
     'click #sortButton':function(event,template){
-      console.log("sort clicked");
       if(Session.get("firstnameC"))
       {
         Session.set("firstnameC", false);
@@ -66,9 +62,9 @@ Router.route('search');
 });
 
 
-
-var getInfoContact =function(id){
-  //console.log(id);
+/*Get the details of the contact clicked. Saves properties in session variables.
+After variables set, the function sends the user to the detailContact screen*/
+var getInfoContact = function(id){
   var obj = contacts.find({_id:id}).fetch();
   console.log(obj);
   Session.set("firstName",obj[0].firstname);
@@ -79,7 +75,6 @@ var getInfoContact =function(id){
   Session.set("latitude", obj[0].latitude);
   Session.set("longitude",obj[0].longitude);
   Session.set("id",obj[0]._id);
-  //set name, etc in detailContact with session variables
 
   Router.go('/detailContact');
 };

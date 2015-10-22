@@ -5,4 +5,3 @@ Session.set("gender","");
 Session.set("email","");
 Session.set("latitude","");
 Session.set("longitude","");
-Session.set("countContacts", 0);

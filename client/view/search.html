@@ -5,7 +5,7 @@
         <h1 class="title">Search for contact</h1>
       </div>
 
-      {{#ionContent class="has-header"}}
+      {{#ionContent class="has-header has-footer"}}
         <label class="item item-input">
           <i class="icon ion-search placeholder-icon"></i>
           <input id="searchField" type="search" placeholder="Search">
@@ -13,8 +13,7 @@
         {{#each result}}
           {{#ionItem}}
               <h2>{{firstname}} {{lastname}}</h2>
-              <!-- <button id="viewContact" class="button button-clear icon ion-ios-telephone"></button> -->
-              <p>Phonenumber: {{number}}</p>
+              <p>Phone number: {{number}}</p>
               <p>Email: {{email}} </p>
               <p>Longitude: {{longitude}} </p>
               <p>Latitude: {{latitude}} </p>
@@ -22,14 +21,9 @@
         {{/each}}
       {{/ionContent}}
 
-
-
-      {{#ionContent class="has-footer"}}
-      {{/ionContent}}
-
       <div class="bar bar-footer bar-positive">
         <h1 class="title"></h1>
         <button id="searchB" class="button button-clear button-right icon ion-ios-search-strong">Search</button>
       </div>
-  {{/ionView}}
+    {{/ionView}}
 </template>

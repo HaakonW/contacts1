@@ -20,7 +20,7 @@ Template.search.events({
   },
 });
 
-
+//Get contacts who matches the searchterm
 function findContact(searchTerm){
   searchResults = [];
 
@@ -31,11 +31,8 @@ function findContact(searchTerm){
     obj = list[i];
     if(obj.firstname == searchTerm || obj.lastname === searchTerm || obj.gender === searchTerm || obj.email === searchTerm || obj.number === searchTerm || obj.latitude === searchTerm || obj.longitude === searchTerm)
     {
-      console.log("Objects firstname: " + obj.firstname);
-      console.log("objects lastname: " + obj.lastname);
       searchResults.push(obj);
     }
   }
-  console.log(searchResults);
   Session.set("searchRes",searchResults);
 }

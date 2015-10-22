@@ -1,12 +1,3 @@
-
-findUser = function(){
-  navigator.geolocation.getCurrentPosition(GetLocation);
-  function GetLocation(location) {
-      Session.set("latitude", location.coords.latitude);
-      Session.set("longitude", location.coords.longitude);
-  }
-};
-
 Template.newContact.events({
   "click #addBTN": function(){
 
@@ -26,19 +17,29 @@ Template.newContact.events({
                         longitude: Session.get("longitude"),
                         latitude:Session.get("latitude")});
       Router.go("/detailContact");
-}, //END ADDBTN
+    }, //END ADDBTN
 
-"click #latitude": function(){
-    document.getElementById("#latitude").value = Session.get("latitude");
-},
+  "click #latitude": function(){
+      document.getElementById("#latitude").value = Session.get("latitude");
+  },
 
 
-"click #cancelBTN": function(){
-  Router.go('/');
-},
+  "click #cancelBTN": function(){
+    Router.go('/');
+  },
 });
 
 Template.newContact.helpers({
   lat:function(){ return Session.get("latitude"); },
   long:function(){ return Session.get("longitude"); }
 });
+
+
+//Gets the position where the user is now
+findUser = function(){
+  navigator.geolocation.getCurrentPosition(GetLocation);
+  function GetLocation(location) {
+      Session.set("latitude", location.coords.latitude);
+      Session.set("longitude", location.coords.longitude);
+  }
+};
